@@ -1,0 +1,39 @@
+.tree-view {
+  margin-top: 32px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 20px;
+}
+.tree-container {
+  font-family: monospace;
+  margin-top: 10px;
+}
+.tree-node {
+  margin-left: 20px;
+  border-left: 2px solid #bdbdbd;
+  padding-left: 10px;
+  margin-bottom: 8px;
+}
+.tree-node > .keyword {
+  color: #1976d2;
+  font-weight: bold;
+}
+.tree-node ul {
+  list-style: none;
+  padding-left: 0;
+}
+.tree-node li {
+  margin-bottom: 4px;
+}
+.tree-node button {
+  margin-left: 8px;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 2px 8px;
+  cursor: pointer;
+}
+.tree-node button:hover {
+  background: #b71c1c;
+}
