@@ -1,6 +1,6 @@
 import { App } from './components/App.js';
 // ...existing code...
-import { KeywordTree } from './tree/KeywordTree.js';
+import { KeywordTrie } from './tree/KeywordTrie.js';
 
 // Dados de exemplo para demonstração
 const exemploPaginas = [
@@ -32,7 +32,11 @@ const exemploPaginas = [
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
-  exemploPaginas.forEach(p => KeywordTree.insertPage(p));
+  // Só insere dados de exemplo se não houver dados salvos
+  const data = localStorage.getItem('buscadorweb_pages');
+  if (!data) {
+    exemploPaginas.forEach(p => KeywordTrie.insertPage(p));
+  }
   document.getElementById('root').appendChild(App());
   document.dispatchEvent(new Event('treeUpdated'));
 });

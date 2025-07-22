@@ -1,4 +1,4 @@
-import { KeywordTree } from '../tree/KeywordTree.js';
+import { KeywordTrie } from '../tree/KeywordTrie.js';
 
 export function SearchPanel() {
   const section = document.createElement('section');
@@ -29,7 +29,7 @@ export function SearchPanel() {
   form.onsubmit = (e) => {
     e.preventDefault();
     const keywords = input.value.trim().toLowerCase().split(/\s+/);
-    const results = KeywordTree.searchMultiple(keywords);
+    const results = KeywordTrie.searchMultiple(keywords);
     resultDiv.innerHTML = '';
     if (results.length === 0) {
       resultDiv.textContent = 'Nenhum resultado encontrado.';

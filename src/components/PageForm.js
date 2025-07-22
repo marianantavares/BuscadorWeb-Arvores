@@ -1,4 +1,4 @@
-import { KeywordTree } from '../tree/KeywordTree.js';
+import { KeywordTrie } from '../tree/KeywordTrie.js';
 
 export function PageForm() {
   const section = document.createElement('section');
@@ -46,7 +46,7 @@ export function PageForm() {
       url: inputUrl.value.trim(),
       keywords: inputKeywords.value.trim().toLowerCase().split(/\s+/)
     };
-    KeywordTree.insertPage(page);
+    KeywordTrie.insertPage(page);
     msg.textContent = 'Página adicionada com sucesso!';
     form.reset();
     setTimeout(() => msg.textContent = '', 2000);

@@ -1,4 +1,4 @@
-import { KeywordTree } from '../tree/KeywordTree.js';
+import { KeywordTrie } from '../tree/KeywordTrie.js';
 
 export function TreeView() {
   const section = document.createElement('section');
@@ -14,33 +14,36 @@ export function TreeView() {
 
   function renderTree() {
     treeDiv.innerHTML = '';
-    const root = KeywordTree.getRoot();
-    if (!root) {
+    const root = KeywordTrie.getRoot();
+    if (!root || Object.keys(root.children).length === 0) {
       treeDiv.textContent = 'Árvore vazia.';
       return;
     }
-    treeDiv.appendChild(renderNode(root));
+    treeDiv.appendChild(renderNode(root, []));
   }
 
-  function renderNode(node) {
+  function renderNode(node, path) {
     const el = document.createElement('div');
     el.className = 'tree-node';
-    el.innerHTML = `<span class="keyword">${node.keyword}</span>`;
+    if (node.keyword) {
+      el.innerHTML = `<span class="keyword">${node.keyword}</span>`;
+    }
     if (node.pages.length > 0) {
       const ul = document.createElement('ul');
       node.pages.forEach(page => {
         const li = document.createElement('li');
         li.innerHTML = `<strong>${page.title}</strong> <a href="${page.url}" target="_blank">${page.url}</a> <button data-url="${page.url}">Remover</button>`;
         li.querySelector('button').onclick = () => {
-          KeywordTree.removePage(page.url, node.keyword);
+          KeywordTrie.removePage(page.url, path.concat(node.keyword).filter(Boolean));
           document.dispatchEvent(new Event('treeUpdated'));
         };
         ul.appendChild(li);
       });
       el.appendChild(ul);
     }
-    if (node.left) el.appendChild(renderNode(node.left));
-    if (node.right) el.appendChild(renderNode(node.right));
+    for (const child of Object.values(node.children)) {
+      el.appendChild(renderNode(child, path.concat(node.keyword).filter(Boolean)));
+    }
     return el;
   }
 
