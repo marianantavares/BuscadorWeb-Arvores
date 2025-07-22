@@ -1,0 +1,38 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build output
+dist/
+build/
+
+# VSCode
+.vscode/
+
+# Env files
+.env
+.env.*
+
+# Others
+*.local
+*.cache
+
+# Ignore local storage backups (if any)
+localStorage.json
+
+# Ignore coverage
+coverage/
+
+# Ignore server temp files
+server/*.log
+server/tmp/
