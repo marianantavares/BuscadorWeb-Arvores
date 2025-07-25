@@ -5,7 +5,7 @@ export function CrawlerPanel() {
   section.className = 'crawler-panel';
 
   const title = document.createElement('h2');
-  title.textContent = 'Automação: Crawler Simples';
+  title.textContent = 'Crawler Simples';
   section.appendChild(title);
 
   const form = document.createElement('form');

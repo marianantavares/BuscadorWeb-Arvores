@@ -1,0 +1,86 @@
+/* Modal styles for edit page dialog */
+.modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(1,1,38,0.75);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background: #18183a;
+  border-radius: 12px;
+  box-shadow: 0 2px 24px rgba(38,49,77,0.45);
+  border: 1.5px solid #6ea8fe;
+  padding: 2rem 2.2rem 1.5rem 2.2rem;
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: auto;
+  position: relative;
+  color: #e3e6eb;
+}
+.modal h3 {
+  margin-top: 0;
+  color: #6ea8fe;
+  font-weight: 700;
+  font-size: 1.3em;
+  letter-spacing: 0.01em;
+}
+.modal label {
+  color: #b6c6e3;
+  font-size: 1em;
+  font-weight: 500;
+}
+.modal .modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: flex-end;
+}
+.modal input[type="text"], .modal input[type="url"] {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1.5px solid #6ea8fe;
+  border-radius: 4px;
+  font-size: 1rem;
+  background: #23234a;
+  color: #e3e6eb;
+  transition: border 0.2s;
+}
+.modal input[type="text"]:focus, .modal input[type="url"]:focus {
+  border: 1.5px solid #3b7edc;
+  outline: none;
+}
+.modal .close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6ea8fe;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.modal .close-btn:hover {
+  color: #fff;
+}
+.modal button[type="submit"] {
+  background: #6ea8fe;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 18px;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 1px 4px rgba(110,168,254,0.08);
+}
+.modal button[type="submit"]:hover {
+  background: #3b7edc;
+}

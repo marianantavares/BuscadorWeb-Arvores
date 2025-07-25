@@ -53,7 +53,15 @@
   align-items: center;
   justify-content: center;
 }
-.tree-node button:hover {
+.tree-node .edit-btn {
+  background: #6ea8fe;
+  color: #fff;
+}
+.tree-node .edit-btn:hover {
+  background: #3b7edc;
+  color: #fff;
+}
+.tree-node .remove-btn:hover {
   background: #6d0000;
   color: #fff;
   box-shadow: 0 2px 8px rgba(110,168,254,0.18);
